@@ -11,7 +11,7 @@ margin:10px;
 }
 button{
   font-size: 23px;
-  margin-left:150px;
+  margin-left:10px;
   margin-top:20px;
 }
 #results{
@@ -20,16 +20,16 @@ font-size:25px
 </style>
 <body>
 <br>
+<h1>Get an approximation of your ideal caloric needs!</h1>
 
+<p>Height in CM: <input type="text" size="5" id="heightInput" oninput="heightFunction()"><br></p>
 
-<p>Height in CM <input type="text" size="5" id="heightInput" oninput="heightFunction()"><br></p>
+<p>Ideal realistic weight in KG: <input type="text" size="3" id="weightInput" oninput="myFunction()"><br></p>
 
-<p>Weight in KG <input type="text" size="3" id="weightInput" oninput="myFunction()"><br></p>
+<p>Age: <input type="text" size="3" id="ageInput" oninput="yobFunction()"><br></p>
 
-<p>Age <input type="text" size="3" id="ageInput" oninput="yobFunction()"><br></p>
-
-<p>Ideal Amount of Daily Strenuous Activity in Minutes <input type="text" size="3" id="strenuousActivity" oninput="sAFunction()"></p>
-<p>Ideal Amount of Daily Light Activity in Minutes <input type="text" size="3" id="lightActivity" oninput="lAFunction()"><br></p>
+<p>Ideal Amount of Daily Strenuous Activity in Minutes: <input type="text" size="3" id="strenuousActivity" oninput="sAFunction()"></p>
+<p>Ideal Amount of Daily Light Activity in Minutes: <input type="text" size="3" id="lightActivity" oninput="lAFunction()"><br></p>
 <p id="lAcalories"></p>
 
 <button onclick="calcBMR()">Calculate!</button>
