@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<style>
+body{
+  font-family: sans-serif;
+  margin: 10px;
+  font-size: 20px;
+}
+p{
+margin:10px;
+}
+button{
+  font-size: 23px;
+  margin-left:150px;
+  margin-top:20px;
+}
+#results{
+font-size:25px
+}
+</style>
+<body>
+<br>
+
+
+<p>Height in CM <input type="text" size="5" id="heightInput" oninput="heightFunction()"><br></p>
+
+<p>Weight in KG <input type="text" size="3" id="weightInput" oninput="myFunction()"><br></p>
+
+<p>Age <input type="text" size="3" id="ageInput" oninput="yobFunction()"><br></p>
+
+<p>Ideal Amount of Daily Strenuous Activity in Minutes <input type="text" size="3" id="strenuousActivity" oninput="sAFunction()"></p>
+<p>Ideal Amount of Daily Light Activity in Minutes <input type="text" size="3" id="lightActivity" oninput="lAFunction()"><br></p>
+<p id="lAcalories"></p>
+
+<button onclick="calcBMR()">Calculate!</button>
+<div id="results">
+<p id="BMR"></p>
+<p id="activityCombined"></p>
+<p id="caloricNeeds"></p>
+</div>
+
+<script>
+
+
+function calcBMR() {
+    var age = parseFloat(document.getElementById("ageInput").value);
+    var height = parseFloat(document.getElementById("heightInput").value);
+    var weight = parseFloat(document.getElementById("weightInput").value);
+    var BMR = (weight * 10 + height * 6.25 - (age *5) + 5).toString();
+       document.getElementById("BMR").innerHTML = "BMR: " + BMR;
+var x = document.getElementById("lightActivity").value;
+var y = document.getElementById("strenuousActivity").value;
+
+document.getElementById("activityCombined").innerHTML = "Activity Burns: " + (x/60*weight*300/70 + y/60*weight*600/70).toString();
+
+document.getElementById("caloricNeeds").innerHTML = "Your BMR + your ideal activity levels combined would require " +(x/60*weight*300/70 + y/60*weight*600/70 + parseInt(BMR)).toString() + " calories.";
+
+}
+
+
+</script>
+
+</body>
+</html>
